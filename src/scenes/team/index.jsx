@@ -6,6 +6,7 @@ import Header from "../../components/Header";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import { API_URL } from "../../config";
 
 const Team = () => {
   const user = useSelector((store) => store.user.users);
@@ -18,7 +19,7 @@ const Team = () => {
   }, []);
 console.log(user);
   const getMockData = async () => {
-    const response = await fetch("http://127.0.0.1:8000/student", {
+    const response = await fetch(`${API_URL}/student`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

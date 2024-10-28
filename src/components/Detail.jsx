@@ -8,6 +8,7 @@ import ResultCard from "./ResultCard";
 import Drives from "./Drives";
 import Resume from "./Resume";
 import ConsolidatedData from "./ConsolidatedData";
+import { API_URL } from '../config';
 
 const Detail = () => {
   const { id } = useParams();
@@ -22,7 +23,7 @@ const Detail = () => {
 
   const getStudentData = async () => {
     try {
-      const response = await fetch(`http://127.0.0.1:8000/student/${id}`);
+      const response = await fetch(`${API_URL}/student/${id}`);
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }

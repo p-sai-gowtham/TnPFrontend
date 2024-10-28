@@ -5,6 +5,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { API_URL } from '../../config';
 
 
 export default function JobApplicationForm() {
@@ -30,7 +31,7 @@ export default function JobApplicationForm() {
     console.log('Form Data:', formData);
 
     try {
-      const response = await fetch('http://127.0.0.1:8000/job_applications', {
+      const response = await fetch(`${API_URL}/job_applications`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

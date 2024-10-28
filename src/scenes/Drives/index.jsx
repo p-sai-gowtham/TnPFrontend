@@ -13,6 +13,7 @@ import Header from "../../components/Header";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import InputField from "./inputField.jsx";
+import { API_URL } from "../../config.js";
 
 const Team = () => {
   const theme = useTheme();
@@ -33,7 +34,7 @@ const Team = () => {
   };
 
   const getMockData = async () => {
-    const response = await fetch("http://127.0.0.1:8000/student", {
+    const response = await fetch(`${API_URL}/student`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -156,7 +157,7 @@ const Team = () => {
       };
     });
 
-    fetch("http://127.0.0.1:8000/add_drive_data", {
+    fetch(`${API_URL}/add_drive_data`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

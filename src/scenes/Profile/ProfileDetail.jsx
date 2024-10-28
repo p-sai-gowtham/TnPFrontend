@@ -8,6 +8,7 @@ import ProfileResultCard from "./ProfileResultCard";
 import ProfileDrives from "./ProfileDrives";
 import ProfileResume from "./ProfileResume";
 import StudentConsolidatedData from "./StudentConsolidateData";
+import { API_URL } from "../../config";
 
 const ProfileDetail = () => {
   const { id } = useParams();
@@ -22,7 +23,7 @@ const ProfileDetail = () => {
 
   const getStudentData = async () => {
     try {
-      const response = await fetch(`http://127.0.0.1:8000/student/${id}`);
+      const response = await fetch(`${API_URL}/student/${id}`);
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }

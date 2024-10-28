@@ -4,6 +4,7 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { API_URL } from '../../config';
 
 export default function EditJobApplicationPage() {
   const { id } = useParams(); 
@@ -19,7 +20,7 @@ export default function EditJobApplicationPage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`http://127.0.0.1:8000/get_job_application/${id}`);
+        const response = await fetch(`${API_URL}/get_job_application/${id}`);
         if (!response.ok) {
           throw new Error('Network response was not ok');
           
@@ -53,7 +54,7 @@ export default function EditJobApplicationPage() {
     e.preventDefault();
     try {
       const response = await fetch(
-        `http://127.0.0.1:8000/edit_job_application/${id}`,
+        `${API_URL}/edit_job_application/${id}`,
         {
           method: "POST",
           headers: {

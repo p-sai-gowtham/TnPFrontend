@@ -7,6 +7,7 @@ import Button from '@mui/material/Button';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import { useDispatch, useSelector } from 'react-redux';
 import { applyForJob } from '../utils/jobApplications';
+import { API_URL } from '../config';
 
 export default function Apply() {
   const { id } = useParams();
@@ -19,7 +20,7 @@ export default function Apply() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`http://127.0.0.1:8000/get_job_application/${id}`);
+        const response = await fetch(`${API_URL}/get_job_application/${id}`);
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
@@ -47,7 +48,7 @@ export default function Apply() {
       console.log(applicationData);
 
       try {
-        const response = await fetch('http://127.0.0.1:8000/submit_application', {
+        const response = await fetch(`${API_URL}/submit_application`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

@@ -8,6 +8,7 @@ import Collapse from '@mui/material/Collapse';
 import Button from '@mui/material/Button';
 import CheckIcon from '@mui/icons-material/Check';
 import { useSelector } from 'react-redux';
+import { API_URL } from '../config';
 
 export default function Jobs() {
   const [formDataList, setFormDataList] = useState([]);
@@ -19,7 +20,7 @@ export default function Jobs() {
   useEffect(() => {
     const fetchJobsData = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:8000/get_all_job_applications');
+        const response = await fetch(`${API_URL}/get_all_job_applications`);
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
@@ -32,7 +33,7 @@ export default function Jobs() {
 
     const fetchAppliedApplications = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:8000/get_applied_applications', {
+        const response = await fetch(`${API_URL}/get_applied_applications`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

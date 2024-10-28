@@ -12,6 +12,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useDispatch, useSelector } from "react-redux";
 import { login, isStudent as setIsStudent } from "../utils/user"; 
 import { useNavigate } from "react-router-dom";
+import { API_URL } from "../config";
 
 const defaultTheme = createTheme({
   palette: {
@@ -61,7 +62,7 @@ function Signin() {
     const password = formData.get("password");
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/user/login", {
+      const response = await fetch(`${API_URL}/user/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

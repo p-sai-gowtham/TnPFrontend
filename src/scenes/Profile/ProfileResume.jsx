@@ -9,6 +9,7 @@ import {
   Snackbar,
   Alert,
 } from "@mui/material";
+import { API_URL } from "../../config";
 
 const ProfileResume = ({ studentId }) => {
   const [resumes, setResumes] = useState({
@@ -21,7 +22,7 @@ const ProfileResume = ({ studentId }) => {
 
   useEffect(() => {
     // Fetch the existing resume data when the component mounts
-    fetch(`http://127.0.0.1:8000/resumes/${studentId}`)
+    fetch(`${API_URL}/resumes/${studentId}`)
       .then((response) => response.json())
       .then((data) => {
         // Assuming the API returns an object with resume URLs or file paths
@@ -49,7 +50,7 @@ const ProfileResume = ({ studentId }) => {
     formData.append("resume", resumes[type]);
     formData.append("student_id", studentId);
 
-    fetch(`http://127.0.0.1:8000/upload/${type}`, {
+    fetch(`${API_URL}/upload/${type}`, {
       method: "POST",
       body: formData,
     })
@@ -70,7 +71,7 @@ const ProfileResume = ({ studentId }) => {
   };
 
   const handleDelete = (type) => {
-    fetch(`http://127.0.0.1:8000/delete/${type}/${studentId}`, {
+    fetch(`${API_URL}/delete/${type}/${studentId}`, {
       method: "DELETE",
     })
       .then((response) => response.json())

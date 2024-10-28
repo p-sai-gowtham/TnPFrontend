@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import { DataGrid } from '@mui/x-data-grid';
+import { API_URL } from '../../config';
 
 export default function JobApplicationDisplay() {
   const [formDataList, setFormDataList] = useState([]);
@@ -11,7 +12,7 @@ export default function JobApplicationDisplay() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:8000/get_all_job_applications');
+        const response = await fetch(`${API_URL}/get_all_job_applications`);
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
@@ -29,7 +30,7 @@ export default function JobApplicationDisplay() {
   // Handle delete operation
   const handleDelete = async (id) => {
     try {
-      const response = await fetch(`http://127.0.0.1:8000/delete_job_application/${id}`, {
+      const response = await fetch(`${API_URL}/delete_job_application/${id}`, {
         method: 'post',
       });
       if (response.ok) {

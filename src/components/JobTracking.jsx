@@ -8,6 +8,7 @@ import {
   MenuItem,
   Typography,
 } from "@mui/material";
+import { API_URL } from "../config";
 
 const JobTracking = () => {
   const [jobNames, setJobNames] = useState([]);
@@ -23,7 +24,7 @@ const JobTracking = () => {
   const fetchJobNames = async () => {
     setLoading(true);
     try {
-      const response = await fetch("http://127.0.0.1:8000/job_company_name", {
+      const response = await fetch(`${API_URL}/job_company_name`, {
         method: "GET", // Use GET method to fetch job names
       });
       const data = await response.json();
@@ -44,7 +45,7 @@ const JobTracking = () => {
     setLoading(true);
     try {
       const response = await fetch(
-        "http://127.0.0.1:8000/get_applied_students",
+        `${API_URL}/get_applied_students`,
         {
           method: "POST",
           headers: {
