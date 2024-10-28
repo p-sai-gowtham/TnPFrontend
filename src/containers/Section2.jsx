@@ -11,23 +11,16 @@ const CustomCounter = ({
   after = "",
   counter,
   subtitle,
-  decimals = false,
 }) => (
   <Stack spacing={{ xs: 1, md: 2 }} alignItems="center">
-    <CountUp prefix={before} suffix={after} end={counter} decimals={decimals}>
-      {({ countUpRef }) => (
-        <Title variant={{ xs: "h4", md: "h2" }} sx={{ fontWeight: 400 }}>
-          <span ref={countUpRef} />
-        </Title>
-      )}
-    </CountUp>
-
+    <Title variant={{ xs: "h4", md: "h2" }} sx={{ fontWeight: 400 }}>
+      {before}{counter}{after}
+    </Title>
     <Typography variant="body2" color="text.secondary">
       {subtitle}
     </Typography>
   </Stack>
 );
-
 const Section2 = () => {
   return (
     <Container sx={{ mt: -10 }}>
