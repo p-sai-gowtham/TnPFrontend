@@ -327,56 +327,53 @@ export const Section11Content = {
 };
 
 export const footerContent = {
-  protocols: {
-    title: "Protocols",
+  programs: {
+    title: "Programs",
     links: [
-      { title: "Liquidity Protocol" },
-      { title: "Aggregation Protocol" },
-      { title: "Limit Order Protocol" },
+      { title: "Internship Opportunities" },
+      { title: "Placement Training" },
+      { title: "Skill Development Programs" },
     ],
   },
-  governance: {
-    title: "Governance",
+  resources: {
+    title: "Resources",
     links: [
-      { title: "1inch DAO" },
-      { title: "1INCH token" },
-      { title: "Forum" },
+      { title: "Placement Handbook" },
+      { title: "Alumni Network" },
+      { title: "Student Success Stories" },
     ],
   },
   support: {
     title: "Support",
     links: [
-      { title: "Help center" },
-      { title: "Press room" },
-      { title: "Bug report", subtitle: "by Hacker one" },
-      { title: "Contacts" },
+      { title: "Help Center" },
+      { title: "Contact TPO" },
+      { title: "Feedback" },
+      { title: "FAQs" },
     ],
   },
   developers: {
-    title: "Governance",
+    title: "Developers",
     links: [
       { title: "Documentation" },
       { title: "GitHub" },
-      { title: "Audit" },
-      { title: "Bug bounty" },
+      { title: "APIs" },
+      { title: "Community Contributions" },
     ],
   },
   subscribe: {
-    title: "Subscribe to 1inch newsletter",
-    subtitle: "Get the latest news and updates",
+    title: "Subscribe to Lendi Updates",
+    subtitle: "Get the latest news on placements and training programs",
   },
   socials: [
-    { icon: BookIcon },
-    { icon: RedditIcon },
-    { icon: TwitterIcon },
-    { icon: ChatIcon },
-    { icon: TelegramIcon },
-    { icon: GitHubIcon },
+    { icon: LinkedInIcon, link: "https://www.linkedin.com/school/90401698/admin/dashboard/" },
+    { icon: InstagramIcon, link: "https://www.instagram.com/lendienggcollege" },
+    { icon: TwitterIcon, link: "https://x.com/lendi2008" },
   ],
   copyright: {
-    left: "© 2023 1inch, All Rights Reserved.",
-    center: "ENS: 1inch.eth",
-    right: "BUIDL @ETHNewYork 2019",
+    left: "© 2023 Lendi Institute of Engineering and Technology, All Rights Reserved.",
+    center: "Official Site: lendi.org",
+    right: "Empowering students since 2008",
   },
 };
 

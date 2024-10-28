@@ -11,11 +11,14 @@ import React from "react";
 import { footerContent } from "../../utils/content";
 import OutlinedButton from "../Buttons/OutlinedButton";
 import Title from "../Title";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import TwitterIcon from "@mui/icons-material/Twitter";
 
 const {
   subscribe,
-  protocols,
-  governance,
+  programs,
+  resources,
   support,
   developers,
   copyright,
@@ -25,7 +28,6 @@ const {
 const LinkSection = ({ title, links }) => (
   <Stack spacing={2.5}>
     <Title>{title}</Title>
-
     {links.map(({ title }) => (
       <Typography
         key={title}
@@ -54,14 +56,14 @@ const Footer = () => {
           {/* Links */}
           <Grid item xs={12} md={6} lg={7} xl={8}>
             <Grid container spacing={2}>
-              {/* Protocols */}
+              {/* Programs */}
               <Grid item xs={6} sm={3} md={6} lg={3}>
-                <LinkSection {...protocols} />
+                <LinkSection {...programs} />
               </Grid>
 
-              {/* Governance */}
+              {/* Resources */}
               <Grid item xs={6} sm={3} md={6} lg={3}>
-                <LinkSection {...governance} />
+                <LinkSection {...resources} />
               </Grid>
 
               {/* Support */}
@@ -96,9 +98,9 @@ const Footer = () => {
                 justifyContent="space-between"
                 flexWrap="wrap"
               >
-                {socials.map((item, i) => (
-                  <IconButton key={i}>
-                    <item.icon />
+                {socials.map(({ icon: Icon, link }, i) => (
+                  <IconButton key={i} href={link} target="_blank" rel="noopener">
+                    <Icon />
                   </IconButton>
                 ))}
               </Stack>
