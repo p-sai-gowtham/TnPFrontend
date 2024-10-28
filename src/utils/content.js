@@ -67,12 +67,9 @@ import Staker from "../assets/images/section11/staker.svg";
 import Bitpay from "../assets/images/section11/bitPay.svg";
 
 // Footer
-import BookIcon from "@mui/icons-material/Book";
-import RedditIcon from "@mui/icons-material/Reddit";
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from "@mui/icons-material/Twitter";
-import ChatIcon from "@mui/icons-material/Chat";
-import TelegramIcon from "@mui/icons-material/Telegram";
-import GitHubIcon from "@mui/icons-material/GitHub";
+import InstagramIcon from '@mui/icons-material/Instagram';
 
 // Navbar
 import Logo from "../assets/images/tnplendi.png";
